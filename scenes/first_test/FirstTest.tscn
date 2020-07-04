@@ -1,0 +1,380 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://gui/font_regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://gui/font_semibold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://gui/font_light.tres" type="DynamicFont" id=3]
+[ext_resource path="res://gui/font_bold.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+shadow_color = Color( 0.0235294, 0.0196078, 0.0196078, 0.6 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0235294, 0.980392, 0.0392157, 1 )
+shadow_color = Color( 0.0235294, 0.0196078, 0.0196078, 0.6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.105882, 0.972549, 1 )
+shadow_color = Color( 0.0235294, 0.0196078, 0.0196078, 0.6 )
+
+[node name="FirstTest" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.5874
+margin_bottom = 6.4126
+custom_constants/margin_right = 20
+custom_constants/margin_top = 30
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUIDivider" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 30.0
+margin_right = 1004.0
+margin_bottom = 578.0
+rect_min_size = Vector2( 125, 0 )
+custom_constants/separation = 15
+alignment = 2
+
+[node name="DebugPanel" type="PanelContainer" parent="GUIDivider"]
+margin_right = 984.0
+margin_bottom = 172.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Debug" type="HBoxContainer" parent="GUIDivider/DebugPanel"]
+margin_left = 15.0
+margin_top = 10.0
+margin_right = 969.0
+margin_bottom = 162.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="GUIDivider/DebugPanel/Debug"]
+margin_right = 200.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="LabelDebug" type="Label" parent="GUIDivider/DebugPanel/Debug/Menu"]
+margin_right = 200.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 4 )
+text = "Debug"
+align = 1
+
+[node name="Pause" type="Button" parent="GUIDivider/DebugPanel/Debug/Menu"]
+margin_top = 30.0
+margin_right = 200.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 2 )
+text = "Pause"
+
+[node name="Reset" type="Button" parent="GUIDivider/DebugPanel/Debug/Menu"]
+margin_top = 63.0
+margin_right = 200.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 2 )
+text = "Reset"
+
+[node name="Values" type="VBoxContainer" parent="GUIDivider/DebugPanel/Debug"]
+margin_left = 250.0
+margin_right = 954.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Status" type="HBoxContainer" parent="GUIDivider/DebugPanel/Debug/Values"]
+margin_right = 704.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Status"]
+margin_right = 130.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "Current Mode:"
+
+[node name="Value" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Status"]
+margin_left = 134.0
+margin_right = 204.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "Running"
+
+[node name="Total" type="HBoxContainer" parent="GUIDivider/DebugPanel/Debug/Values"]
+margin_top = 26.0
+margin_right = 704.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Total"]
+margin_right = 100.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "All Total:"
+
+[node name="Value" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Total"]
+margin_left = 104.0
+margin_right = 114.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="Timer" type="HBoxContainer" parent="GUIDivider/DebugPanel/Debug/Values"]
+margin_top = 52.0
+margin_right = 704.0
+margin_bottom = 74.0
+
+[node name="Label" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Timer"]
+margin_right = 130.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "Elapsed time:"
+
+[node name="Value" type="Label" parent="GUIDivider/DebugPanel/Debug/Values/Timer"]
+margin_left = 134.0
+margin_right = 144.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="ClickerPanel" type="PanelContainer" parent="GUIDivider"]
+margin_top = 187.0
+margin_right = 984.0
+margin_bottom = 359.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="Clicker" type="HBoxContainer" parent="GUIDivider/ClickerPanel"]
+margin_left = 15.0
+margin_top = 10.0
+margin_right = 969.0
+margin_bottom = 162.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="Menu" type="VBoxContainer" parent="GUIDivider/ClickerPanel/Clicker"]
+margin_right = 200.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="LabelGroup" type="Label" parent="GUIDivider/ClickerPanel/Clicker/Menu"]
+margin_right = 200.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 4 )
+text = "Active/Clicker"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickMe" type="Button" parent="GUIDivider/ClickerPanel/Clicker/Menu"]
+margin_top = 30.0
+margin_right = 200.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 2 )
+text = "Click Me"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="HBoxContainer" parent="GUIDivider/ClickerPanel/Clicker/Menu"]
+margin_top = 63.0
+margin_right = 200.0
+margin_bottom = 88.0
+
+[node name="Minus" type="Button" parent="GUIDivider/ClickerPanel/Clicker/Menu/Control"]
+margin_right = 98.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "-"
+
+[node name="Plus" type="Button" parent="GUIDivider/ClickerPanel/Clicker/Menu/Control"]
+margin_left = 102.0
+margin_right = 200.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "+"
+
+[node name="CurrentLabel" type="Label" parent="GUIDivider/ClickerPanel/Clicker/Menu"]
+margin_top = 96.0
+margin_right = 200.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 3 )
+text = "Curr Value"
+align = 1
+valign = 1
+
+[node name="CurrentValue" type="Label" parent="GUIDivider/ClickerPanel/Clicker/Menu"]
+margin_top = 126.0
+margin_right = 200.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="Values" type="VBoxContainer" parent="GUIDivider/ClickerPanel/Clicker"]
+margin_left = 250.0
+margin_right = 954.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Clicking" type="HBoxContainer" parent="GUIDivider/ClickerPanel/Clicker/Values"]
+margin_right = 704.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="GUIDivider/ClickerPanel/Clicker/Values/Clicking"]
+margin_right = 120.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "From Clicks:"
+
+[node name="Value" type="Label" parent="GUIDivider/ClickerPanel/Clicker/Values/Clicking"]
+margin_left = 124.0
+margin_right = 134.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="IdlePanel" type="PanelContainer" parent="GUIDivider"]
+margin_top = 374.0
+margin_right = 984.0
+margin_bottom = 548.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="GUIDivider" type="HBoxContainer" parent="GUIDivider/IdlePanel"]
+margin_left = 15.0
+margin_top = 10.0
+margin_right = 969.0
+margin_bottom = 164.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="GUIDivider/IdlePanel/GUIDivider"]
+margin_right = 200.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="LabelIdle" type="Label" parent="GUIDivider/IdlePanel/GUIDivider/Menu"]
+margin_right = 200.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 4 )
+text = "Idle"
+align = 1
+
+[node name="Idle" type="Button" parent="GUIDivider/IdlePanel/GUIDivider/Menu"]
+margin_top = 30.0
+margin_right = 200.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+text = "Enable Idling"
+
+[node name="IdleControl" type="HBoxContainer" parent="GUIDivider/IdlePanel/GUIDivider/Menu"]
+margin_top = 63.0
+margin_right = 200.0
+margin_bottom = 88.0
+
+[node name="Minus" type="Button" parent="GUIDivider/IdlePanel/GUIDivider/Menu/IdleControl"]
+margin_right = 98.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "-"
+
+[node name="Plus" type="Button" parent="GUIDivider/IdlePanel/GUIDivider/Menu/IdleControl"]
+margin_left = 102.0
+margin_right = 200.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "+"
+
+[node name="CurrentLabel" type="Label" parent="GUIDivider/IdlePanel/GUIDivider/Menu"]
+margin_top = 96.0
+margin_right = 200.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 3 )
+text = "Curr Value"
+align = 1
+valign = 1
+
+[node name="CurrentValue" type="Label" parent="GUIDivider/IdlePanel/GUIDivider/Menu"]
+margin_top = 126.0
+margin_right = 200.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="Values" type="VBoxContainer" parent="GUIDivider/IdlePanel/GUIDivider"]
+margin_left = 250.0
+margin_right = 954.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Idling" type="HBoxContainer" parent="GUIDivider/IdlePanel/GUIDivider/Values"]
+margin_right = 704.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="GUIDivider/IdlePanel/GUIDivider/Values/Idling"]
+margin_right = 120.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "From Idling:"
+
+[node name="Value" type="Label" parent="GUIDivider/IdlePanel/GUIDivider/Values/Idling"]
+margin_left = 124.0
+margin_right = 134.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+[connection signal="pressed" from="GUIDivider/ClickerPanel/Clicker/Menu/ClickMe" to="GUIDivider/DebugPanel/Debug/Values/Total" method="_on_ClickMe_pressed"]
